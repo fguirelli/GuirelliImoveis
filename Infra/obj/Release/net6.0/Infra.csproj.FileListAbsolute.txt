@@ -1,0 +1,14 @@
+D:\GuirelliImoveis\Infra\bin\Release\net6.0\Infra.deps.json
+D:\GuirelliImoveis\Infra\bin\Release\net6.0\Infra.runtimeconfig.json
+D:\GuirelliImoveis\Infra\bin\Release\net6.0\Infra.dll
+D:\GuirelliImoveis\Infra\bin\Release\net6.0\Infra.pdb
+D:\GuirelliImoveis\Infra\obj\Release\net6.0\Infra.csproj.AssemblyReference.cache
+D:\GuirelliImoveis\Infra\obj\Release\net6.0\Infra.GeneratedMSBuildEditorConfig.editorconfig
+D:\GuirelliImoveis\Infra\obj\Release\net6.0\Infra.AssemblyInfoInputs.cache
+D:\GuirelliImoveis\Infra\obj\Release\net6.0\Infra.AssemblyInfo.cs
+D:\GuirelliImoveis\Infra\obj\Release\net6.0\Infra.csproj.CoreCompileInputs.cache
+D:\GuirelliImoveis\Infra\obj\Release\net6.0\Infra.dll
+D:\GuirelliImoveis\Infra\obj\Release\net6.0\refint\Infra.dll
+D:\GuirelliImoveis\Infra\obj\Release\net6.0\Infra.pdb
+D:\GuirelliImoveis\Infra\obj\Release\net6.0\Infra.genruntimeconfig.cache
+D:\GuirelliImoveis\Infra\obj\Release\net6.0\ref\Infra.dll

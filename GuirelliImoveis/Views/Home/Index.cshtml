@@ -1,0 +1,79 @@
+﻿@using GuirelliImoveisAPI.DTO;
+@model dynamic
+
+<input type="button" class="btn btn-primary" value="Criar Imóvel" onclick="window.location='@Url.Action("Privacy", "Home")'" />
+@foreach (ImovelDTO imovel in Model.Imoveis)
+{
+    <div id="carouselExampleControls" class="carousel slide w-50 carousel-dark mx-auto" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @{ List<ImovelImagemDTO> ImoveisImagens = Util.ObterImoveisImagens(@imovel.Id).Result;
+                foreach (ImovelImagemDTO imovelImagem in ImoveisImagens)
+                {
+                    string classe = imovelImagem.NumeroImagem == 1 ? "carousel-item active" : "carousel-item";
+                    <div class="@classe">
+                        <img src="@imovelImagem.CaminhoImagem" class="d-block w-100">
+                    </div>
+                }
+            }
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon text-black" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>Código:</td>
+            <td>@imovel.Id</td>
+        </tr>
+        <tr>
+            <td>Título:</td>
+            <td>@imovel.Titulo</td>
+        </tr>
+        <tr>
+            <td>Tipo Imóvel:</td>
+            <td>@Util.ObterTipoImovel(@imovel.TipoImovel)</td>
+        </tr>
+        <tr>
+            <td>Tipo Operação:</td>
+            <td>@Util.ObterTipoOperacao(@imovel.TipoOperacao)</td>
+        </tr>
+        <tr>
+            <td>Cidade:</td>
+            <td>@Util.ObterCidade(@imovel.CidadeId).Result</td>
+        </tr>
+        <tr>
+            <td>Quartos:</td>
+            <td>@imovel.QuantidadeQuartos</td>
+        </tr>
+        <tr>
+            <td>Suítes:</td>
+            <td>@imovel.QuantidadeSuites</td>
+        </tr>
+        <tr>
+            <td>Vagas Garagem:</td>
+            <td>@imovel.QuantidadeVagasGaragem</td>
+        </tr>
+        <tr>
+            <td>Banheiros:</td>
+            <td>@imovel.QuantidadeBanheiros</td>
+        </tr>
+        <tr>
+            <td>Área Total:</td>
+            <td>@imovel.AreaTotal</td>
+        </tr>
+        <tr>
+            <td>Área Útil:</td>
+            <td>@imovel.AreaUtil</td>
+        </tr>
+        <tr>
+            <td>Preço:</td>
+            <td>@Util.FormatarValorMonetario(@imovel.Preco)</td>
+        </tr>
+    </table>
+}

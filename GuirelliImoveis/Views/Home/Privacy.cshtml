@@ -1,0 +1,72 @@
+﻿@using Infra;
+@model Imovel
+@{
+    ViewData["Title"] = "Cadastro de Imóveis";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Criar Imóvel</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <input name="txtCodigo" type="text" hidden="hidden" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Título</label>
+            <input asp-for="Titulo" size="100" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label>Descrição</label>
+            <input asp-for="Descricao" size="4000" type="text" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Tipo do Imóvel</label>
+            @Html.DropDownList("ddlTipoImovel", (SelectList)ViewBag.TipoImovel))
+        </div>
+        <div class="mb-3">
+            <label>Tipo da Operação</label>
+            @Html.DropDownList("ddlTipoOperacao", (SelectList)ViewBag.TipoOperacao))
+        </div>
+        <div class="mb-3">
+            <label>Cidade</label>
+            @Html.DropDownList("ddlCidade", new SelectList(ViewBag.Cidades, "Id", "Nome"))
+        </div>
+        <div class="mb-3">
+            <label>Quantidade de Quartos</label>
+            <input asp-for="QuantidadeQuartos" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Quantidade de Suites</label>
+            <input asp-for="QuantidadeSuites" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Quantidade de Vagas de Garagem</label>
+            <input asp-for="QuantidadeVagasGaragem" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Quantidade de Banheiros</label>
+            <input asp-for="QuantidadeBanheiros" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Área Total</label>
+            <input asp-for="AreaTotal" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Área Útil</label>
+            <input asp-for="AreaUtil" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Preco</label>
+            <input asp-for="Preco" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Imagens</label>
+            <input type="file" name="uploadFiles" multiple="multiple" class="form-control" />
+        </div>
+        <button asp-controller="Home" asp-action="Criar" type="submit" class="btn btn-primary" style="width:150px">Criar</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="width:150px">Voltar</a>
+    </div>
+</form>
