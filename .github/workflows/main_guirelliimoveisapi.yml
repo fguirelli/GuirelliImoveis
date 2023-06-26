@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'GuirelliImoveisAPI'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_225C465FE0FE4D06B42023E993265B48 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_594ADA4376FA4F47BA81E73831391332 }}
           package: .
